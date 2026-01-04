@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Numbers - Algorithmic Puzzle Solver</title>
+
+</head>
+
+<body>
+  <div class="bg-animation"></div>
+
+  <header class="header">
+    <h1>Department Numbers Solver</h1>
+    <p>Solve the algorithmic puzzle of assigning unique numbers to city departments with constraints</p>
+  </header>
+
+  <div class="container">
+    <div class="departments">
+      <div class="dept-card">
+        <div class="dept-icon">👮</div>
+        <div class="dept-name">Police Department</div>
+        <div class="dept-desc">Must have an even number</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">🗑️</div>
+        <div class="dept-name">Sanitation Department</div>
+        <div class="dept-desc">Unique number 1-7</div>
+      </div>
+      <div class="dept-card">
+        <div class="dept-icon">🚒</div>
+        <div class="dept-name">Fire Department</div>
+        <div class="dept-desc">Unique number 1-7</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <div class="input-group">
+          <label>Available Numbers</label>
+          <input type="text" class="input-field" id="numbersInput" value="1,2,3,4,5,6,7" placeholder="e.g., 1,2,3,4,5,6,7">
+        </div>
+        <div class="input-group">
+          <label>Target Sum</label>
+          <input type="number" class="input-field" id="targetInput" value="12" placeholder="e.g., 12">
+        </div>
+        <button class="btn" onclick="solvePuzzle()">Solve Puzzle</button>
+        <button class="btn" onclick="generateRandom()">Random Challenge</button>
+      </div>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="loader"></div>
+      <p style="margin-top: 1rem; color: var(--text-secondary);">Solving puzzle...</p>
+    </div>
+
+    <div class="results" id="results" style="display: none;">
+      <div class="results-header">
+        <h2 class="results-title">Valid Combinations</h2>
+        <div class="results-count" id="resultsCount">0 combinations found</div>
+      </div>
+      <div class="combinations-grid" id="combinationsGrid"></div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-value" id="totalCombinations">0</div>
+          <div class="stat-label">Total Combinations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="executionTime">0</div>
+          <div class="stat-label">Execution Time (ms)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="efficiency">0%</div>
+          <div class="stat-label">Efficiency</div>
+        </div>
+      </div>
+
+      <div class="code-display">
+        <div class="code-header">
+          <span class="code-title">JavaScript Implementation</span>
+          <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+        </div>
+        <pre id="codeDisplay"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Code copied to clipboard!</div>
+
+</body>
+
+</html>
